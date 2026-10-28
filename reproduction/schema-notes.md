@@ -10,7 +10,8 @@ It specifies 4,000–15,000 body words and at least eight references.
 
 A reference requires `ref_id`, `type` and `title`, plus one of authors, DOI or
 URL. The integer `year` property is optional. Accordingly, the undated OSIRIS
-reference omits `year`, retains its URL and corporate author, and states its
+references to the guide and pinned public loader source omit `year`, retain
+their URLs and corporate author, and state their
 actual access date in `venue`. No publication year is inferred from a footer.
 
 The machine-readable metadata properties omit `total_tokens`, while the same

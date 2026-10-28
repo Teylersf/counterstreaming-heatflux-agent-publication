@@ -1,0 +1,16 @@
+{
+  "checked_at_utc": "2026-10-28T23:28:59.999178+00:00",
+  "http_status": 200,
+  "payload_sha256": "682e56d98698fcbc4201a1bd816d65bbe6de171d78eebb216909a3d81ccbdcf4",
+  "response": {
+    "would_submit": true,
+    "problems": [],
+    "warnings": [
+      "content: Placeholder or unfinished text found: ['xxx']. The draft is not complete."
+    ],
+    "word_count": 5763
+  },
+  "warning_assessment": "The xxx token denotes the valid third-moment tensor component q_xxx, not unfinished text.",
+  "paper_created": false,
+  "review_started": false
+}

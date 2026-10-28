@@ -6,17 +6,24 @@
   },
   "project": {
     "title": "Initial-state matching and stability diagnostics for a counter-streaming electron-fluid closure",
-    "summary": "Archived initial-state controls and explicit continuum stability diagnostics for arXiv:2607.07106v1.",
-    "research_question": "Do the posted PIC and fluid initializers match physical moments, and does finite isotropization reproduce the stated kinetic longitudinal stability?",
+    "summary": "Archived PIC and reloaded fluid initial-state controls with conditional loader calculations and an auxiliary continuum calibration for arXiv:2607.07106v1.",
+    "research_question": "How do the archived initial physical moments differ, what does a conditional public loading rule explain, and which causal or sheet-stability conclusions remain untested?",
     "status": "active"
   },
   "claims": [
     {
-      "text": "The archived initial PIC moment current near the lower sheet center is about 11.5 percent below the staggered magnetic-curl target; the PIC proper-momentum initializer and fluid ordinary-velocity initializer do not specify the same physical state.",
+      "text": "The archived initial PIC and fluid velocity moments differ: the full x-averaged moment-current profile has a relative L2 difference of 9.87 percent, and the two lower-sheet central cells differ by about 11.6 percent. Reloaded fluid output corroborates the posted initializers to roundoff.",
       "kind": "finding",
       "status": "proposed",
-      "evidence_summary": "Pinned published input decks, selected t=0 moments with CRC32/SHA-256 and stagger-aware deterministic profile analysis.",
-      "confidence_note": "Moment-current diagnostic and posted fluid initializer, not native deposited current or a new matched-state nonlinear rerun."
+      "evidence_summary": "Five CRC32/SHA-256 checked t=0 BP snapshots, embedded inputs byte-identical to the posted Lua decks, all 480x640 fluid cells checked, and full 640-row PIC/fluid profile comparisons.",
+      "confidence_note": "Physical moment current and velocity-covariance pressure; no native deposited-current file is identifiable. Whole-archive MD5, a matched-state rerun and nonlinear causal significance remain unestablished."
+    },
+    {
+      "text": "The inspected public unweighted thermal-momentum loading rule predicts a mean drift below its cold proper-velocity conversion. An unfitted quadratic-shape sensitivity further accounts for the scale of the archived lower-sheet drift reduction.",
+      "kind": "finding",
+      "status": "proposed",
+      "evidence_summary": "Complete posted PIC deck audit, pinned public loader/deposition source, converged Gaussian quadrature and independent Cartesian moment checks; conditional pointwise and shape predictions remain separate.",
+      "confidence_note": "Conditional on the public loading rule and stated sampling assumptions; the original executable and custom velocity-diagnostic kernel are not identified or certified."
     },
     {
       "text": "A specified homogeneous two-Maxwellian equilibrium stable to collisionless longitudinal electrostatic perturbations has an overstable mode in the stated finite-isotropization fluid closure.",
@@ -24,13 +31,6 @@
       "status": "proposed",
       "evidence_summary": "Explicit rational Penrose bound, linear system, eigenvalue residual, dielectric residual and Gauss-constraint checks.",
       "confidence_note": "Separate nonrelativistic continuum benchmark; no claim that this mode occurred in the source reconnection simulation or of general electromagnetic stability."
-    },
-    {
-      "text": "A zero normal velocity at a symmetry plane does not prevent density accumulation, and a thermal-to-drift speed ratio alone does not control relative third-moment error near cancellation.",
-      "kind": "finding",
-      "status": "proposed",
-      "evidence_summary": "Retained periodic continuity proof, conditioned error estimate and deterministic mixture checks.",
-      "confidence_note": "Does not invalidate the exact mixture identities or independently disprove the original empirical scan."
     }
   ]
 }

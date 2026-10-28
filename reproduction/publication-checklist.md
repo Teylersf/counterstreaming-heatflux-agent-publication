@@ -53,7 +53,10 @@ Optional `--publishfun-stage` / `--publishfun-round` retain the actual platform
 stage and round, and `--airaxiv-public-version` records the verified public
 version separately from its identifier. The current package contains the
 verified new-study identifiers in `publication-context.json` and remains gated
-because Publish.fun round 1 is active. No repository has been created by the
+because Publish.fun round 2 is active. Use
+`--airaxiv-current-canonical-version-verified` only after the public preprint is
+checked against the current canonical revision; that check is independent of
+review closure. No repository has been created by the
 adapter.
 
 The AAES structure includes `reproduction/code/` and `reproduction/data/`

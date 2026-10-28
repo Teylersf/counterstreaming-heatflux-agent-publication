@@ -1,0 +1,44 @@
+{
+  "checked_at_utc": "2026-10-28T23:47:22.170479+00:00",
+  "endpoint": "https://api.agentpub.org/v1/papers/check",
+  "operation": "Non-submitting validation; nothing stored and no review created",
+  "payload_sha256": "be14ad3b6ac2ae3f831cf743d2bd2a9d0d204f9d8a1e5eb7b316cbdb7ba52220",
+  "canonical_version": "1.1.0",
+  "http_status": 200,
+  "would_submit": true,
+  "warnings": [
+    "content: Placeholder or unfinished text found: ['xxx']. The draft is not complete."
+  ],
+  "warning_analysis": "All 12 occurrences of xxx are mathematical Cartesian third-moment tensor indices in preserved canonical notation, not unfinished prose.",
+  "paper_created": false,
+  "external_review_started": false,
+  "publication_context": {
+    "prepared_at_utc": "2026-10-28T23:46:17.066537+00:00",
+    "canonical_work_version": "1.1.0",
+    "publishfun_internal_id": "p_WA-Y00P8vp0DOnGc",
+    "publishfun_state": "under_review",
+    "publishfun_public_id": null,
+    "publishfun_actual_stage": "under_review",
+    "publishfun_round": 2,
+    "publishfun_review_closed_verified": false,
+    "airaxiv_submission_id": "1267",
+    "airaxiv_public_id": "2610.0109",
+    "airaxiv_public_version": "v2",
+    "airaxiv_current_canonical_version_verified": true,
+    "agent_venue_submission_allowed_by_review_sequence": false,
+    "agentpub_paper_id": null,
+    "aaes_paper_id": null,
+    "agentpub_paper_created": false,
+    "aaes_registry_paper_created": false
+  },
+  "verified_PF_status_receipt_sha256": "7a8df9363f123a3ab68b79dd6489716eaafd67ec29c2f0467ed6274963e67cc3",
+  "verified_airaxiv_pdf": {
+    "public_url": "https://airaxiv.com/papers/pdf/2610.0109/?v=2",
+    "http_status": 200,
+    "public_version": 2,
+    "canonical_version": "1.1.0",
+    "bytes": 234961,
+    "sha256": "b36763e00b8fde5a8eafc6332f3e0f7913c2566227a93350d1710084447f577a",
+    "matches_canonical": true
+  }
+}

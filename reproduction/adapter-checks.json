@@ -1,15 +1,22 @@
 {
-  "canonical_manuscript_sha256": "1b64705d06d2c589eef140ffeda07cdb63451516cbe24e4d0fc7b94020ce1a19",
-  "agent_paper_sha256": "2f4e438b593abaf6b3a6254cb3c81a0c6dd9dbc9234edd61cbd8fb3e75d743ce",
-  "canonical_math_segments": 237,
-  "agent_math_segments": 237,
+  "canonical_manuscript_sha256": "4df0f7e41c6c9aed0012ec1bc827144635125bc8d413ec6f7dd024337626e206",
+  "agent_paper_sha256": "ac2e0d2cb961bcd52dd7bfba1e171aa567c4a05024979a5eb4da283358b119fc",
+  "canonical_math_segments": 306,
+  "agent_math_segments": 306,
   "all_math_segments_identical_and_in_same_order": true,
   "canonical_proof_markers": 3,
   "agent_proof_markers": 3,
   "all_proof_markers_preserved": true,
-  "body_word_count_regex": 6664,
-  "body_word_count_whitespace": 5763,
-  "reference_count": 10,
+  "numbered_equations": 21,
+  "all_21_equation_tags_preserved": true,
+  "code_block_count": 3,
+  "all_code_blocks_identical": true,
+  "table_count": 5,
+  "table_data_rows": 31,
+  "all_tables_identical": true,
+  "body_word_count_regex": 8414,
+  "body_word_count_whitespace": 7353,
+  "reference_count": 11,
   "reference_numbering_matches_compiled_aux": true,
   "undated_osiris_publication_year_omitted": true,
   "canonical_verification_group_count": 8,
@@ -64,10 +71,49 @@
     "Conclusion",
     "Appendix"
   ],
+  "canonical_code_commit": "0d07de76f3d0b56e49e9ef2b9de931b8567ad0c8",
+  "canonical_three_figure_files": [
+    {
+      "path": "figures/initial-state.png",
+      "bytes": 115477,
+      "sha256": "647761f35db2ae9296de71a710a4909cd3f1d2248ef251017896cbf9c901b60c"
+    },
+    {
+      "path": "figures/initial-state.pdf",
+      "bytes": 28215,
+      "sha256": "23c73500302e9e955a510156bf07900f0a54c3aa10ca0e8daa687b30dc9869ff"
+    },
+    {
+      "path": "figures/profile-sensitivity.png",
+      "bytes": 101491,
+      "sha256": "0a5a2f0c6dc8368a7929089a28419b5a5d4e57d3ea1fcdb0dc217cf9933041ba"
+    },
+    {
+      "path": "figures/profile-sensitivity.pdf",
+      "bytes": 35737,
+      "sha256": "5090c576e6c66ccbbe0471058907dd6b3ed49db78a3b145f2f48bad46b2fbf45"
+    },
+    {
+      "path": "figures/stability.png",
+      "bytes": 76916,
+      "sha256": "e9715497cdcf3e7836d727ad214ecbb0bcaa09bf93ac3024a142431efe96f02f"
+    },
+    {
+      "path": "figures/stability.pdf",
+      "bytes": 26814,
+      "sha256": "2261bcc882f20eec0e7cdb3bc14b2881eb05db2caeebf8e0c79557ed548e7c40"
+    }
+  ],
+  "three_revision_programs_included": [
+    "experiments/revision_data.py",
+    "experiments/profile_sensitivity.py",
+    "experiments/thermal_loading.py"
+  ],
+  "only_public_audit_ledger_and_prior_art_copied": true,
   "canonical_result_sections_preserved": [
     "2 Initial-state matching in the supplied input decks",
-    "3 A controlled linear-stability test",
-    "4 Density can grow at a symmetry-plane stagnation point",
+    "3 An auxiliary homogeneous linear-stability test",
+    "4 A secondary continuity clarification",
     "5 Conditioning a relative heat-flux accuracy claim",
     "6 Finite isotropization over a comparison interval",
     "7 Reproducible calculations and evidence limits"
@@ -87,6 +133,16 @@
       "path": "data/derived/initial-profiles.csv",
       "bytes": 159154,
       "sha256": "a7ec9ed64168ba0e066c96aeeafc210527bed7aaf64f2459795d2835fb49d7fc"
+    },
+    {
+      "path": "data/derived/profile-sensitivity.csv",
+      "bytes": 107149,
+      "sha256": "e3089bc427ca5dbbc6dd23928cfa8c3f608190403987587f35d1d8296b94d60a"
+    },
+    {
+      "path": "data/derived/revision-fluid-profiles.csv",
+      "bytes": 223911,
+      "sha256": "9c42755c1f7b6073b6f49f627eeaf8f736f4de46aa3cdc35f9629dacdd565ded"
     },
     {
       "path": "data/input-decks/input_1-e-Fluid.lua",
@@ -109,6 +165,11 @@
       "sha256": "ed77272bbe359d0248e35aa7fdef55e8a036a70a1b6913ab2eeabfedf136006a"
     },
     {
+      "path": "data/provenance-revision.json",
+      "bytes": 91179,
+      "sha256": "25b9abe520ffee744c3881759e60a3f2e88f4ca63834eec6c619e9804af5f3f9"
+    },
+    {
       "path": "data/provenance.json",
       "bytes": 6965,
       "sha256": "beb711507099f5e22f31255beb6415483835399fdafafbcb76fd7dd5808b8101"
@@ -117,6 +178,11 @@
       "path": "data/README.md",
       "bytes": 4396,
       "sha256": "3baa07582f93a1f48aa1ced670bf0917555511d64da42e05880112b62ddabe9b"
+    },
+    {
+      "path": "data/revision-README.md",
+      "bytes": 6510,
+      "sha256": "63d03acf852e34f2f6c352607b6a30f40273a9765bde68cb505fb32e201622a6"
     },
     {
       "path": "experiments/closure_checks.py",
@@ -139,6 +205,21 @@
       "sha256": "2cb9ee6ac2766720033a873b40a38c8b2f6a134bf099ade4eb16315e443accfe"
     },
     {
+      "path": "experiments/profile_sensitivity.py",
+      "bytes": 6893,
+      "sha256": "16f79b0c6c4aad933b2efedf8516dbca609a53993442bcccd78cd16be5c15e7e"
+    },
+    {
+      "path": "experiments/revision_data.py",
+      "bytes": 22484,
+      "sha256": "ad9f47607fecb68eb3a914783e3d88af8cef1e05c5ed557784286fea901db0db"
+    },
+    {
+      "path": "experiments/thermal_loading.py",
+      "bytes": 21702,
+      "sha256": "8ca81418bba26d8307337d7d0f1612bcf169186f91a00b1c6e84b5ea5748511d"
+    },
+    {
       "path": "experiments/verify.py",
       "bytes": 3425,
       "sha256": "23c64243de9e58d493fc87b18b4c47edf917fb67d11853898009e6e8824903e6"
@@ -152,6 +233,16 @@
       "path": "figures/initial-state.png",
       "bytes": 115477,
       "sha256": "647761f35db2ae9296de71a710a4909cd3f1d2248ef251017896cbf9c901b60c"
+    },
+    {
+      "path": "figures/profile-sensitivity.pdf",
+      "bytes": 35737,
+      "sha256": "5090c576e6c66ccbbe0471058907dd6b3ed49db78a3b145f2f48bad46b2fbf45"
+    },
+    {
+      "path": "figures/profile-sensitivity.png",
+      "bytes": 101491,
+      "sha256": "0a5a2f0c6dc8368a7929089a28419b5a5d4e57d3ea1fcdb0dc217cf9933041ba"
     },
     {
       "path": "figures/stability.pdf",
@@ -174,19 +265,24 @@
       "sha256": "338a793b6faa74f76466ca5edb492162f4f49e1fa4ce961dbdc19225b45db55e"
     },
     {
+      "path": "requirements-bp.txt",
+      "bytes": 178,
+      "sha256": "6796e06819a56956a6ba90a44b9acab220166e842651290ea3581ddd73f2954e"
+    },
+    {
       "path": "requirements.txt",
       "bytes": 45,
       "sha256": "d32fc57ca50220d8799d94c70aff16c4151210e5cb92ee7029ef20c8c8c585ee"
     },
     {
       "path": "results/artifact-manifest.json",
-      "bytes": 8908,
-      "sha256": "56805ed3352d07b6229a9853a3b50438dcac9cc72e1416fb5699a7a080229c79"
+      "bytes": 13222,
+      "sha256": "d08a17907aa2509a651e96a7b3b69e048e9171082e002da5acf45354afada19d"
     },
     {
       "path": "results/code-pin.json",
-      "bytes": 812,
-      "sha256": "fc735e2314489d2d692da474de002ab1e338df7b9fa91079d7b882c4e247f3ca"
+      "bytes": 1898,
+      "sha256": "b57299fec40010345a56709e52c1c5114a07df44802f2312cfd655fee05724f0"
     },
     {
       "path": "results/data-checks.json",
@@ -202,6 +298,21 @@
       "path": "results/figure-manifest.json",
       "bytes": 1187,
       "sha256": "ba4a5e4e8cdc2fbb0c36c6f0f8754627d4eabf4941ed7472153c9c56f318b891"
+    },
+    {
+      "path": "results/profile-sensitivity.json",
+      "bytes": 6059,
+      "sha256": "f74e9bc750cb661cda931045f7b471cb29271d525c15e08504b54f618c4de586"
+    },
+    {
+      "path": "results/revision-data.json",
+      "bytes": 19034,
+      "sha256": "0abafde815b680b75af3fa01efcfee8cf20aa1e140325199ce8fb9cc22dd2066"
+    },
+    {
+      "path": "results/thermal-loading.json",
+      "bytes": 37345,
+      "sha256": "f7c6c4918020ea9d7278f2c3bd299850f2869bf30cd29694f7b7075478a91161"
     },
     {
       "path": "results/verification.json",
@@ -255,27 +366,28 @@
     },
     {
       "path": "SOURCE.md",
-      "bytes": 8810,
-      "sha256": "eb38c9a7675302d964e86af3445b6f6d2512899499b321d6091917fd0b8017ab"
+      "bytes": 9242,
+      "sha256": "abeec133edb6f54cd2b80cdebcb27ff7a1a5f9b6e7bce474fb22d0e179f29c12"
     }
   ],
   "no_owner_email_or_phone_in_agent_payload": true,
   "human_operator_is_not_agent_schema_coauthor": true,
   "token_usage_sentinel_is_not_measurement": true,
   "no_raw_data_or_original_or_canonical_paper_pdf_copied": true,
-  "canonical_release_target": "https://github.com/Teylersf/counterstreaming-heatflux-audit/releases/tag/v1.0.0",
+  "canonical_release_target": "https://github.com/Teylersf/counterstreaming-heatflux-audit/releases/tag/v1.1.0",
   "publication_context": {
-    "prepared_at_utc": "2026-10-28T23:28:22.067770+00:00",
-    "canonical_work_version": "1.0.0",
+    "prepared_at_utc": "2026-10-28T23:46:17.066537+00:00",
+    "canonical_work_version": "1.1.0",
     "publishfun_internal_id": "p_WA-Y00P8vp0DOnGc",
     "publishfun_state": "under_review",
     "publishfun_public_id": null,
     "publishfun_actual_stage": "under_review",
-    "publishfun_round": 1,
+    "publishfun_round": 2,
     "publishfun_review_closed_verified": false,
-    "airaxiv_submission_id": "1266",
+    "airaxiv_submission_id": "1267",
     "airaxiv_public_id": "2610.0109",
-    "airaxiv_public_version": null,
+    "airaxiv_public_version": "v2",
+    "airaxiv_current_canonical_version_verified": true,
     "agent_venue_submission_allowed_by_review_sequence": false,
     "agentpub_paper_id": null,
     "aaes_paper_id": null,
