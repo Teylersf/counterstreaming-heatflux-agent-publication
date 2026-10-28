@@ -1,0 +1,10 @@
+{
+  "formal_section_and_reference_schema_checks_passed": true,
+  "local_cli_rejects_three_inconsistent_review_contexts": true,
+  "default_review_gate_false_and_all_new_venue_ids_null": true,
+  "copied_file_hashes_verified": 38,
+  "all_six_no_network_closure_groups_match_canonical": true,
+  "raw_cache_absent_by_design": true,
+  "archived_data_groups_retained_from_canonical_without_redundant_download": true,
+  "no_publication_or_git_operation_performed": true
+}

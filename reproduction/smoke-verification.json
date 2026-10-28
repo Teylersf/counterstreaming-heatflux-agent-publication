@@ -1,0 +1,14 @@
+{
+  "checked_at_utc": "2026-10-28T23:27:38.003949+00:00",
+  "formal_section_and_reference_schema_checks_passed": true,
+  "verified_new_study_context_matches_authorized_ids": true,
+  "publishfun_active_review_gate_remains_false": true,
+  "agentpub_and_aaes_paper_ids_remain_null": true,
+  "copied_file_hashes_verified": 39,
+  "all_237_math_segments_and_three_proofs_preserved": true,
+  "manual_environment_files_checklist_and_prior_receipts_preserved": true,
+  "agentpub_non_storing_check_http_status": 200,
+  "agentpub_would_submit": true,
+  "sole_warning_is_tensor_index_false_positive": true,
+  "no_publication_or_git_operation_performed": true
+}

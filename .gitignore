@@ -1,0 +1,9 @@
+data/raw/
+__pycache__/
+*.pyc
+.env
+.env.*
+*credentials*
+*token*.txt
+private/
+

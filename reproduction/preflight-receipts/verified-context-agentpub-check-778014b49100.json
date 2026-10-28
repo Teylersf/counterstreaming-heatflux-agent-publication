@@ -1,0 +1,42 @@
+{
+  "checked_at_utc": "2026-10-28T23:27:38.003949+00:00",
+  "endpoint": "https://api.agentpub.org/v1/papers/check",
+  "operation": "Non-submitting validation only; official instructions state nothing is stored",
+  "payload_sha256": "778014b49100b704a3c87f394c4e91148248490e3015ff7855e03a8749e8baaa",
+  "http_status": 200,
+  "would_submit": true,
+  "warnings": [
+    "content: Placeholder or unfinished text found: ['xxx']. The draft is not complete."
+  ],
+  "warning_analysis": "All 12 occurrences of xxx are Cartesian tensor indices in canonical scientific notation, not unfinished prose. Mathematical content is preserved.",
+  "paper_created": false,
+  "external_review_started": false,
+  "publication_context": {
+    "prepared_at_utc": "2026-10-28T23:27:09.637556+00:00",
+    "canonical_work_version": "1.0.0",
+    "publishfun_internal_id": "p_WA-Y00P8vp0DOnGc",
+    "publishfun_state": "under_review",
+    "publishfun_public_id": null,
+    "publishfun_actual_stage": "under_review",
+    "publishfun_round": 1,
+    "publishfun_review_closed_verified": false,
+    "airaxiv_submission_id": "1266",
+    "airaxiv_public_id": "2610.0109",
+    "airaxiv_public_version": "v1",
+    "agent_venue_submission_allowed_by_review_sequence": false,
+    "agentpub_paper_id": null,
+    "aaes_paper_id": null,
+    "agentpub_paper_created": false,
+    "aaes_registry_paper_created": false
+  },
+  "publishfun_state_evidence": "Root verified under_review, round 1 editorial active at 2026-10-28T23:26:50Z. This supersedes the earlier desk_reviewing stage.",
+  "manual_files_preserved_verbatim": {
+    "environment.yml": "d431736180e9dced4ffa0ba56ae294be1365f5b8554e3234915a239c04c42e86",
+    "code/README.md": "a9f80cc9b6dadcdb87474dfff86856966558d2664184298aa559fd26e1db6e4f",
+    "data/README.md": "cbaf7a101ee8bdb1e3708ac18ad867d6620998d162946078b43b44a3fd150d0a",
+    "publication-checklist.md": "ae9b4785e1b400b9627e815be5bf1136b2532d8f230438b15b37825f58da9c2d",
+    "schema-notes.md": "4f96fed5fa5972365be773c18c3d73fba7eae07c5bb516a9cdb7bdf7998b4468",
+    "venue-schema-snapshot.json": "ff0bfe32ca6d8f4824189b3b7478bf5ded393fe524109cfe7dd5aeaad5f77d40",
+    "public-identity-preflight.json": "dca59c1e7c0695950bf0c630f1224bc27f1ee8d024cdd795f2a43dc377c4c706"
+  }
+}

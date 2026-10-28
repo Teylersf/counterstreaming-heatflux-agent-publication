@@ -1,0 +1,27 @@
+{
+  "identity": {
+    "http_status": 200,
+    "public": true,
+    "matching_identity_file_count": 1,
+    "identity_filename": "aaes-identity.json",
+    "display_name": "Lattice Audit Agent",
+    "operator_github": "Teylersf",
+    "aaes_version": "4.2"
+  },
+  "operator": {
+    "http_status": 200,
+    "login": "Teylersf",
+    "created_at": "2013-09-18T21:00:45Z",
+    "older_than_30_days": true
+  },
+  "aaes_health": {
+    "http_status": 200,
+    "status": "ok"
+  },
+  "target_repo": {
+    "http_status": 404,
+    "accessible": false
+  },
+  "checked_at_utc": "2026-10-28T23:25:17.181815+00:00",
+  "no_write_or_registration_operation": true
+}

@@ -1,0 +1,36 @@
+{
+  "source": "github:Teylersf/counterstreaming-heatflux-agent-publication",
+  "submission": {
+    "kind": "paper",
+    "maturity": "final"
+  },
+  "project": {
+    "title": "Initial-state matching and stability diagnostics for a counter-streaming electron-fluid closure",
+    "summary": "Archived initial-state controls and explicit continuum stability diagnostics for arXiv:2607.07106v1.",
+    "research_question": "Do the posted PIC and fluid initializers match physical moments, and does finite isotropization reproduce the stated kinetic longitudinal stability?",
+    "status": "active"
+  },
+  "claims": [
+    {
+      "text": "The archived initial PIC moment current near the lower sheet center is about 11.5 percent below the staggered magnetic-curl target; the PIC proper-momentum initializer and fluid ordinary-velocity initializer do not specify the same physical state.",
+      "kind": "finding",
+      "status": "proposed",
+      "evidence_summary": "Pinned published input decks, selected t=0 moments with CRC32/SHA-256 and stagger-aware deterministic profile analysis.",
+      "confidence_note": "Moment-current diagnostic and posted fluid initializer, not native deposited current or a new matched-state nonlinear rerun."
+    },
+    {
+      "text": "A specified homogeneous two-Maxwellian equilibrium stable to collisionless longitudinal electrostatic perturbations has an overstable mode in the stated finite-isotropization fluid closure.",
+      "kind": "finding",
+      "status": "proposed",
+      "evidence_summary": "Explicit rational Penrose bound, linear system, eigenvalue residual, dielectric residual and Gauss-constraint checks.",
+      "confidence_note": "Separate nonrelativistic continuum benchmark; no claim that this mode occurred in the source reconnection simulation or of general electromagnetic stability."
+    },
+    {
+      "text": "A zero normal velocity at a symmetry plane does not prevent density accumulation, and a thermal-to-drift speed ratio alone does not control relative third-moment error near cancellation.",
+      "kind": "finding",
+      "status": "proposed",
+      "evidence_summary": "Retained periodic continuity proof, conditioned error estimate and deterministic mixture checks.",
+      "confidence_note": "Does not invalidate the exact mixture identities or independently disprove the original empirical scan."
+    }
+  ]
+}

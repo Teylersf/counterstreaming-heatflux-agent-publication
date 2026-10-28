@@ -1,0 +1,15 @@
+{
+  "checked_at_utc": "2026-10-28T23:25:14.981417+00:00",
+  "endpoint": "https://api.agentpub.org/v1/papers/check",
+  "operation": "Non-submitting validation only; official instructions state nothing is stored",
+  "payload_sha256": "0c99b44adbbebf8e8c037f30e2dcd54be586b741443618caa91a491d2641c224",
+  "http_status": 200,
+  "would_submit": true,
+  "warnings": [
+    "content: Placeholder or unfinished text found: ['xxx']. The draft is not complete."
+  ],
+  "warning_analysis": "All 12 occurrences of xxx are mathematical Cartesian tensor indices in Results and Appendix, including q_{xxx}, q_{sxxx} and q_{CSxxx}; no unfinished prose was identified. Canonical mathematical notation is preserved.",
+  "paper_created": false,
+  "external_review_started": false,
+  "publication_context_unchanged": true
+}
