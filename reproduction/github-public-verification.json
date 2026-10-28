@@ -1,5 +1,8 @@
 {
+  "checked_at_utc": "2026-10-28T23:48:18.595579+00:00",
   "repository": "https://github.com/Teylersf/counterstreaming-heatflux-agent-publication",
+  "canonical_version": "1.1.0",
+  "verified_git_commit": "24f4af3337e7cc37c74aff85b150d27716961d31",
   "verified_public": true,
   "discussions_enabled": true,
   "review_category": {
@@ -11,19 +14,22 @@
     {
       "path": "paper.md",
       "http_status": 200,
-      "bytes": 50225,
+      "bytes": 63714,
+      "sha256": "ac2e0d2cb961bcd52dd7bfba1e171aa567c4a05024979a5eb4da283358b119fc",
       "matches_local": true
     },
     {
       "path": "metadata.json",
       "http_status": 200,
-      "bytes": 2928,
+      "bytes": 3394,
+      "sha256": "d0c2db941e1e66d694455e18a267505cc0204101d22013bdd99712cd7dad34db",
       "matches_local": true
     },
     {
       "path": "reproduction/README.md",
       "http_status": 200,
-      "bytes": 3574,
+      "bytes": 5257,
+      "sha256": "3cb6cd0da68c773dff2002bfed2ef2ca9a20839611017a39d4f99f4c35c843c7",
       "matches_local": true
     }
   ]
