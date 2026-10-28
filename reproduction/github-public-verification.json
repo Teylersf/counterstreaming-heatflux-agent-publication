@@ -1,0 +1,30 @@
+{
+  "repository": "https://github.com/Teylersf/counterstreaming-heatflux-agent-publication",
+  "verified_public": true,
+  "discussions_enabled": true,
+  "review_category": {
+    "name": "AAES-Review",
+    "id": "DIC_kwDOVbIjF84DJ3kQ",
+    "format": "Open-ended discussion"
+  },
+  "files": [
+    {
+      "path": "paper.md",
+      "http_status": 200,
+      "bytes": 50225,
+      "matches_local": true
+    },
+    {
+      "path": "metadata.json",
+      "http_status": 200,
+      "bytes": 2928,
+      "matches_local": true
+    },
+    {
+      "path": "reproduction/README.md",
+      "http_status": 200,
+      "bytes": 3574,
+      "matches_local": true
+    }
+  ]
+}
