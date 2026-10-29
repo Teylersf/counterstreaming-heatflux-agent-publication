@@ -6,6 +6,8 @@ Writes only this agent-publication directory. No credentials or API mutations.
 from __future__ import annotations
 
 import argparse
+from collections import Counter
+import copy
 import csv
 from datetime import datetime, timezone
 import hashlib
@@ -49,6 +51,81 @@ def count_words(text: str) -> int:
 
 def math_segments(text: str) -> list[str]:
     return re.findall(r"\$\$.*?\$\$|(?<!\$)\$(?!\$).*?(?<!\$)\$(?!\$)", text, re.S)
+
+
+def agentpub_section_reorganization(sections: list[dict], abstract: str, refs: list[dict]) -> tuple[list[dict], dict]:
+    """Move one intact methods subsection; never shorten scientific prose."""
+    original = copy.deepcopy(sections)
+    reorganized = copy.deepcopy(sections)
+    by_name = {section["heading"]: section for section in reorganized}
+    results = by_name["Results"]["content"]
+    first = "#### 3.1 Intervention and implementation\n\n"
+    following = "#### 3.2 Comparison quantities and scope\n\n"
+    assert results.count(first) == results.count(following) == 1, "Inspect changed control-subsection structure before repackaging"
+    start, end = results.index(first), results.index(following)
+    assert end > start
+    moved = results[start:end]
+    assert not re.search(r"\\tag\{|\*\*Proof\.\*\*|!\[|(?m:^\|)", moved), "Relocated methods unexpectedly contain a numbered equation, proof, figure or table"
+    note = ("### Implementation methods (AgentPub section arrangement)\n\n"
+            "**AgentPub section-format note.** Canonical Section 3.1, “Intervention and implementation,” "
+            "is placed intact in Methodology to meet AgentPub's per-section character limit. Its text "
+            "appears exactly once. The [full agent-edition manuscript](" + AGENT_REPOSITORY +
+            "/blob/main/paper.md) retains the original section order.")
+    by_name["Results"]["content"] = results[:start] + results[end:]
+    by_name["Methodology"]["content"] += "\n\n" + note + "\n\n" + moved
+    before = "\n\n".join(section["content"] for section in original)
+    after = "\n\n".join(section["content"] for section in reorganized)
+    unnoted = after.replace(note, "", 1)
+    assert after.count(note) == 1 and after.count(moved) == 1
+    paragraphs = lambda text: Counter(part for part in text.split("\n\n") if part)
+    assert paragraphs(before) == paragraphs(unnoted), "Scientific paragraphs changed, disappeared or duplicated"
+    before_math, after_math = math_segments(abstract + "\n\n" + before), math_segments(abstract + "\n\n" + after)
+    assert Counter(before_math) == Counter(after_math), "Payload math content/count changed during section relocation"
+    equation_pattern = r"\\tag\{(\d+)\}"
+    assert re.findall(equation_pattern, before) == re.findall(equation_pattern, after)
+    proof_pattern = r"(?s)\*\*Proof\.\*\*.*?\$\\square\$"
+    proofs = re.findall(proof_pattern, before)
+    assert len(proofs) == before.count("**Proof.**") and proofs == re.findall(proof_pattern, after), "Complete proof text/order changed"
+    tables = re.findall(r"(?m)^\|.*(?:\n\|.*)+", before)
+    assert tables == re.findall(r"(?m)^\|.*(?:\n\|.*)+", after)
+    captions = lambda text: [part for part in text.split("\n\n") if re.match(r"^\*\*(?:Figure|Table) \d+\.\*\*", part)]
+    assert captions(before) == captions(after), "A full figure/table caption changed"
+    images = re.findall(r"!\[[^\]]*\]\([^)]+\)", before)
+    assert images == re.findall(r"!\[[^\]]*\]\([^)]+\)", after)
+    code_pattern = r"(?ms)^```[^\n]*\n.*?^```\s*$"
+    assert re.findall(code_pattern, before) == re.findall(code_pattern, after)
+    numbers = lambda text: Counter(re.findall(r"(?<!\w)[+-]?\d[\d,.]*(?:[eE][+-]?\d+)?", text))
+    assert numbers(before) == numbers(unnoted), "A quantitative literal changed"
+    lengths = [{"heading": section["heading"], "unicode_codepoints": len(section["content"]),
+                "utf16_code_units": len(section["content"].encode("utf-16-le")) // 2} for section in reorganized]
+    assert max(max(row["unicode_codepoints"], row["utf16_code_units"]) for row in lengths) <= 49000, "AgentPub section exceeds the conservative character cap"
+    words = count_words(after)
+    assert 4000 <= words <= 15000
+    required_words = count_words("\n\n".join(section["content"] for section in reorganized if section["heading"] != "Appendix"))
+    assert 4000 <= required_words <= 15000
+    assert [section["heading"] for section in reorganized] == REQUIRED_SECTIONS + ["Appendix"]
+    assert all(section == original[index] for index, section in enumerate(reorganized)
+               if section["heading"] not in {"Results", "Methodology"})
+    report = {"operation": "AgentPub-only exact methods-subsection relocation; no prose condensation",
+        "source_section": "Results", "destination_section": "Methodology", "moved_heading": first.strip(),
+        "moved_characters": len(moved), "moved_block_sha256": sha(moved.encode()), "moved_block_exactly_once": True,
+        "platform_note": note, "full_manuscript_url": AGENT_REPOSITORY + "/blob/main/paper.md",
+        "observed_error_count_matches_original_results": len(results) == 52569,
+        "original_results_unicode_codepoints": len(results), "original_results_utf16_code_units": len(results.encode("utf-16-le")) // 2,
+        "counting_scope": "Per-section content. The observed 52569 equals original Results.content in both Unicode codepoints and UTF-16 units; the runtime metric cannot be distinguished from that sample.",
+        "server_section_limit": 50000, "conservative_per_section_cap": 49000, "section_lengths": lengths,
+        "body_word_count_regex": words, "required_seven_section_word_count_regex": required_words,
+        "before_math_segments": len(before_math), "after_math_segments": len(after_math),
+        "all_math_segments_exact_with_multiplicity": True, "global_inline_math_order_preserved": before_math == after_math,
+        "within_relocated_block_math_order_preserved": True, "numbered_equations": len(re.findall(equation_pattern, before)),
+        "all_numbered_equations_in_original_order": True, "complete_proofs_preserved_in_order": len(proofs),
+        "tables_preserved_in_order": len(tables), "table_data_rows": sum(len(table.splitlines()) - 2 for table in tables),
+        "full_figure_and_table_captions_preserved_in_order": len(captions(before)), "figures_preserved_in_order": len(images),
+        "references_before": len(refs), "references_after": len(refs), "all_reference_records_unchanged": True,
+        "all_scientific_paragraphs_exact_with_multiplicity": True, "all_quantitative_literals_preserved": True,
+        "all_other_sections_byte_identical": True, "no_prose_truncation_or_math_whitespace_change": True,
+        "all_preservation_and_character_assertions_passed": True}
+    return reorganized, report
 
 
 def markdown_headings(text: str) -> list[tuple[int, int, int, str]]:
@@ -392,6 +469,8 @@ def main() -> None:
     parser.add_argument("--expected-code-commit", required=True, help="Actual final 40-hex code pin; never a guessed future commit")
     parser.add_argument("--controls-scope", choices=("full-set", "numerical-endpoint-subset"), default="full-set",
                         help="Strict full endpoint set by default; explicitly select numerical subset with rejected outcomes and saved-history evidence retained")
+    parser.add_argument("--agentpub-only", action="store_true",
+                        help="Update only AgentPub payload and its adapter checks; preserve full manuscript, AAES files, context and copied science bytes")
     parser.add_argument("--publishfun-id", help="Verified new-study internal paper identifier")
     parser.add_argument("--publishfun-state", default="not_submitted", choices=["not_submitted", "under_review", "revision_requested", "failed", "accepted", "published", "rejected", "withdrawn"])
     parser.add_argument("--publishfun-public-id", help="Verified new-study public identifier")
@@ -575,16 +654,48 @@ def main() -> None:
     body_words = count_words(body)
     assert 4000 <= body_words <= 15000, body_words
     assert len(meta["title"]) <= 200 and count_words(abstract) <= 500
+    agentpub_sections, agentpub_reorganization = agentpub_section_reorganization(body_sections, abstract, refs)
     payload = {"title": meta["title"], "paper_type": "research_article", "abstract": abstract,
                "authors": [{"agent_id": AGENT_ID, "display_name": "Lattice Audit Agent", "model_type": "OpenAI Codex"}],
                "tags": ["plasma-physics", "magnetic-reconnection", "heat-flux-closure", "linear-stability", "reproducibility"],
-               "sections": body_sections, "references": refs,
+               "sections": agentpub_sections, "references": refs,
                "metadata": {"agent_model": "OpenAI Codex; exact underlying model identifier not recorded", "agent_platform": "Codex desktop", "total_tokens": -1,
-                            "submission_note": "Taylor Kalin is canonical author and human operator. Lattice Audit Agent is the authorized venue-specific agent author. This is one study. All canonical equations, proofs, data methods and references are retained. Token usage is unknown; -1 is an explicit missing-data sentinel, not measured usage. Prepared review state: " + args.publishfun_state + ".",
-                            "generation_params": {"token_usage_status": "not_recorded", "total_tokens_sentinel": -1, "token_usage_is_measurement": False, "exact_model_identifier_status": "not_recorded"}}}
+                            "submission_note": "Taylor Kalin is canonical author and human operator. Lattice Audit Agent is the authorized venue-specific agent author. This is one study. All canonical equations, proofs, data methods and references are retained. Token usage is unknown; -1 is an explicit missing-data sentinel, not measured usage. Prepared review state: " + args.publishfun_state + ". AgentPub-only formatting moves canonical Section 3.1 intact into Methodology; full manuscript and AAES edition keep their original order. Full manuscript: " + AGENT_REPOSITORY + "/blob/main/paper.md.",
+                            "generation_params": {"token_usage_status": "not_recorded", "total_tokens_sentinel": -1, "token_usage_is_measurement": False, "exact_model_identifier_status": "not_recorded", "agentpub_section_reorganization": "Canonical Section 3.1 moved intact from Results to Methodology; no scientific prose shortened"}}}
     serialized = json.dumps(payload, ensure_ascii=False)
     assert not re.search(r"teylersf@gmail\.com|509[- ]?919[- ]?0487|mailto:|tel:", serialized)
     assert all(s["heading"] == h for s, h in zip(body_sections, REQUIRED_SECTIONS + ["Appendix"]))
+    if args.agentpub_only:
+        existing = json.loads((ROOT / "reproduction/adapter-checks.json").read_text(encoding="utf-8"))
+        context = json.loads((ROOT / "reproduction/publication-context.json").read_text(encoding="utf-8"))
+        assert existing["canonical_code_commit"] == args.expected_code_commit and existing["canonical_manuscript_sha256"] == sha(source_path.read_bytes())
+        for key, expected_value in {"canonical_work_version": version, "publishfun_internal_id": args.publishfun_id,
+                "publishfun_state": args.publishfun_state, "publishfun_public_id": args.publishfun_public_id,
+                "publishfun_actual_stage": args.publishfun_stage, "publishfun_round": args.publishfun_round,
+                "publishfun_review_closed_verified": args.publishfun_review_closed_verified,
+                "airaxiv_public_id": args.airaxiv_public_id, "airaxiv_public_version": args.airaxiv_public_version,
+                "airaxiv_submission_id": args.airaxiv_submission_id,
+                "airaxiv_current_canonical_version_verified": args.airaxiv_current_canonical_version_verified,
+                "agent_venue_submission_allowed_by_review_sequence": gate}.items():
+            assert context.get(key) == expected_value, "AgentPub-only mode requires the existing verified package context: " + key
+        frozen = {relative: sha((ROOT / relative).read_bytes()) for relative in
+                  ("paper.md", "metadata.json", "aaes-registration.json", "reproduction/publication-context.json")}
+        assert frozen["paper.md"] == existing["agent_paper_sha256"]
+        for item in existing["copied_verbatim"]:
+            assert sha((ROOT / item["path"]).read_bytes()) == item["sha256"] == sha((CANONICAL / item["path"]).read_bytes())
+            frozen[item["path"]] = item["sha256"]
+        write_json(ROOT / "agentpub-payload.json", payload)
+        assert all(sha((ROOT / relative).read_bytes()) == digest for relative, digest in frozen.items()), "AgentPub-only update changed a frozen full-edition/scientific file"
+        agentpub_reorganization["frozen_full_edition_files_sha256"] = {key: frozen[key] for key in ("paper.md", "metadata.json", "aaes-registration.json", "reproduction/publication-context.json")}
+        agentpub_reorganization["copied_science_files_unchanged"] = len(existing["copied_verbatim"])
+        agentpub_reorganization["payload_sha256"] = sha((ROOT / "agentpub-payload.json").read_bytes())
+        existing["agentpub_section_reorganization"] = agentpub_reorganization
+        write_json(ROOT / "reproduction/adapter-checks.json", existing)
+        print(json.dumps({"agentpub_only": True, "all_preservation_assertions_passed": True,
+                          "Results_characters": len(next(section["content"] for section in agentpub_sections if section["heading"] == "Results")),
+                          "maximum_section_characters": max(row["unicode_codepoints"] for row in agentpub_reorganization["section_lengths"]),
+                          "payload_sha256": agentpub_reorganization["payload_sha256"]}))
+        return
     write_json(ROOT / "agentpub-payload.json", payload)
     displayed_date = datetime.fromisoformat(meta["date"]).strftime("%d %B %Y").lstrip("0")
     header = "# " + meta["title"] + "\n\n**Agent author: Lattice Audit Agent**\n\n**Human operator and canonical author: Taylor Kalin**\n\n[Operator ORCID: 0009-0003-9000-9315](https://orcid.org/0009-0003-9000-9315)\n\n" + displayed_date + " · Version " + version + "\n\n## Abstract\n\n" + abstract + "\n\n"
@@ -684,6 +795,7 @@ def main() -> None:
               "whole_archive_receipt_sha256": sha((CANONICAL / "data/full-archive-verification.json").read_bytes()),
               "only_public_audit_ledger_and_prior_art_copied": True,
               "canonical_result_sections_preserved": [headings[h] for h in results_titles], "copied_verbatim": copied,
+              "agentpub_section_reorganization": agentpub_reorganization,
               "no_owner_email_or_phone_in_agent_payload": True, "human_operator_is_not_agent_schema_coauthor": True,
               "token_usage_sentinel_is_not_measurement": True, "no_raw_data_or_original_or_canonical_paper_pdf_copied": not (ROOT / "data/raw").exists() and not (ROOT / "paper").exists(),
               "canonical_release_target": release, "publication_context": context, "all_adapter_assertions_passed": True}

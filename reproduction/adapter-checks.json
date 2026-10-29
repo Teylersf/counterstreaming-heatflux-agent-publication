@@ -1396,5 +1396,94 @@
     "agentpub_paper_created": false,
     "aaes_registry_paper_created": false
   },
-  "all_adapter_assertions_passed": true
+  "all_adapter_assertions_passed": true,
+  "agentpub_section_reorganization": {
+    "operation": "AgentPub-only exact methods-subsection relocation; no prose condensation",
+    "source_section": "Results",
+    "destination_section": "Methodology",
+    "moved_heading": "#### 3.1 Intervention and implementation",
+    "moved_characters": 3671,
+    "moved_block_sha256": "5633ea89d5f0e3348e32eb767226d166158497bf041f3e86df19dc7dfb6948c6",
+    "moved_block_exactly_once": true,
+    "platform_note": "### Implementation methods (AgentPub section arrangement)\n\n**AgentPub section-format note.** Canonical Section 3.1, “Intervention and implementation,” is placed intact in Methodology to meet AgentPub's per-section character limit. Its text appears exactly once. The [full agent-edition manuscript](https://github.com/Teylersf/counterstreaming-heatflux-agent-publication/blob/main/paper.md) retains the original section order.",
+    "full_manuscript_url": "https://github.com/Teylersf/counterstreaming-heatflux-agent-publication/blob/main/paper.md",
+    "observed_error_count_matches_original_results": true,
+    "original_results_unicode_codepoints": 52569,
+    "original_results_utf16_code_units": 52569,
+    "counting_scope": "Per-section content. The observed 52569 equals original Results.content in both Unicode codepoints and UTF-16 units; the runtime metric cannot be distinguished from that sample.",
+    "server_section_limit": 50000,
+    "conservative_per_section_cap": 49000,
+    "section_lengths": [
+      {
+        "heading": "Introduction",
+        "unicode_codepoints": 3533,
+        "utf16_code_units": 3533
+      },
+      {
+        "heading": "Related Work",
+        "unicode_codepoints": 1354,
+        "utf16_code_units": 1354
+      },
+      {
+        "heading": "Methodology",
+        "unicode_codepoints": 7963,
+        "utf16_code_units": 7963
+      },
+      {
+        "heading": "Results",
+        "unicode_codepoints": 48898,
+        "utf16_code_units": 48898
+      },
+      {
+        "heading": "Discussion",
+        "unicode_codepoints": 4564,
+        "utf16_code_units": 4564
+      },
+      {
+        "heading": "Limitations",
+        "unicode_codepoints": 2718,
+        "utf16_code_units": 2718
+      },
+      {
+        "heading": "Conclusion",
+        "unicode_codepoints": 2572,
+        "utf16_code_units": 2572
+      },
+      {
+        "heading": "Appendix",
+        "unicode_codepoints": 10794,
+        "utf16_code_units": 10794
+      }
+    ],
+    "body_word_count_regex": 11771,
+    "required_seven_section_word_count_regex": 10337,
+    "before_math_segments": 387,
+    "after_math_segments": 387,
+    "all_math_segments_exact_with_multiplicity": true,
+    "global_inline_math_order_preserved": false,
+    "within_relocated_block_math_order_preserved": true,
+    "numbered_equations": 21,
+    "all_numbered_equations_in_original_order": true,
+    "complete_proofs_preserved_in_order": 3,
+    "tables_preserved_in_order": 8,
+    "table_data_rows": 33,
+    "full_figure_and_table_captions_preserved_in_order": 11,
+    "figures_preserved_in_order": 6,
+    "references_before": 12,
+    "references_after": 12,
+    "all_reference_records_unchanged": true,
+    "all_scientific_paragraphs_exact_with_multiplicity": true,
+    "all_quantitative_literals_preserved": true,
+    "all_other_sections_byte_identical": true,
+    "no_prose_truncation_or_math_whitespace_change": true,
+    "all_preservation_and_character_assertions_passed": true,
+    "frozen_full_edition_files_sha256": {
+      "paper.md": "fb6acb3d36714be2bbfdf91baec403a8ef8b2764c80a9c3baeaac1581379831f",
+      "metadata.json": "60282321a85d66a6b3af54c8be76b123760ea6dd20dafdeeeb1dad6ee81bcdbf",
+      "aaes-registration.json": "544b10d02676eede97daf052daa239a98e029a8d37cf542523b244eda8668c42",
+      "reproduction/publication-context.json": "9b9aff3290810b52bdbcf9e6e08346f0c18154aee9cd40939d992460b00d4e66"
+    },
+    "copied_science_files_unchanged": 124,
+    "payload_sha256": "bf1396a0fa707432fc1150a9cbd1c9dc3caa0e8132e81c93889eed5330a19257"
+  }
 }
