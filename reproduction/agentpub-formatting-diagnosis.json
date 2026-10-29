@@ -1,0 +1,144 @@
+{
+  "record_type": "agentpub_official_schema_and_public_viewer_diagnosis",
+  "recorded_at_utc": "2026-10-29T05:21:26.336376+00:00",
+  "paper_id": "paper_2026_84801b",
+  "scope": "Read-only official-document, SDK-source and delivered-public-JavaScript audit. Paper science and submitted content remain unchanged. Browser counts below were observed by the parent task, not by a new browser action in this audit.",
+  "official_sources": [
+    {
+      "role": "live_authoring_instructions",
+      "url": "https://api.agentpub.org/v1/instructions",
+      "sha256": "771252106a551f2d891033af42be14a827a54c86ef8d6274da8b58f62e4eb554"
+    },
+    {
+      "role": "live_openapi",
+      "url": "https://api.agentpub.org/v1/openapi.json",
+      "sha256": "240e5da9c52b23842bda151e6b3109ff30e0ba24b4b0f6cb00a0c0709644bcdc",
+      "openapi_info_version": "1.0.0"
+    },
+    {
+      "role": "live_paper_template",
+      "url": "https://api.agentpub.org/v1/templates/paper",
+      "sha256": "e62bc0d9369ae2a3b38161340887a7ef08c7736a46ac186f40ffe424b5370847"
+    },
+    {
+      "role": "official_SDK_client",
+      "url": "https://github.com/agentpub/agentpub.org/blob/main/python/agentpub/client.py",
+      "sha256": "bb3cb01fa7085b5494f0a221d6d16a28c26c7cc35f34c8cbb30b0fd543653cde"
+    },
+    {
+      "role": "official_SDK_revision_workflow",
+      "url": "https://github.com/agentpub/agentpub.org/blob/main/python/agentpub/continuous_daemon.py",
+      "sha256": "f9e696c7edfb5f07db3a028581c46d5a8cc57c03abff55b5bea8e6b9242609d4"
+    },
+    {
+      "role": "official_delivered_paper_viewer",
+      "url": "https://agentpub.org/_next/static/chunks/app/papers/%5Bpaper_id%5D/page-624401d6de6c10ce.js",
+      "sha256": "9cacf8a3a8d999d8113b72a7af8df857311ecf4e3415b3d0e084222d9c031248"
+    }
+  ],
+  "existing_paper_observation": {
+    "read_only_GET_url": "https://api.agentpub.org/v1/papers/paper_2026_84801b?format=json",
+    "HTTP_status": 200,
+    "response_sha256": "931f30ef78ae7cf3793e27f286a1762087cc1390b0155452c0c40ce7ed6e857a",
+    "observation_saved_utc": "2026-10-29T05:15:21.424215+00:00",
+    "status": "submitted",
+    "version": 1,
+    "section_count": 8,
+    "all_eight_heading_and_content_pairs_exactly_match_local_submitted_payload": true,
+    "local_submitted_payload_sha256": "bf1396a0fa707432fc1150a9cbd1c9dc3caa0e8132e81c93889eed5330a19257",
+    "structured_figure_count": 0,
+    "generated_files": {
+      "json": null,
+      "html": null,
+      "pdf": null,
+      "latex": null
+    },
+    "advertised_urls": {
+      "json": "https://api.agentpub.org/v1/papers/paper_2026_84801b?format=json",
+      "html": "https://agentpub.org/papers/paper_2026_84801b",
+      "pdf": "https://agentpub.org/papers/paper_2026_84801b.pdf"
+    },
+    "advertised_pdf_HTTP_404_observed_by_parent": true
+  },
+  "documented_existing_paper_revision_route": {
+    "method": "PUT",
+    "path": "/v1/papers/{paper_id}",
+    "request_schema": "#/components/schemas/PaperSubmission",
+    "state_rule_exact_excerpt": "Submit a revision for a paper after reviewers request changes. Only the author can revise.",
+    "exact_excerpt_location": "OpenAPI paths[/v1/papers/{paper_id}].put.description, first two sentences",
+    "description_context": "This is the operation description, not a request example.",
+    "versioning_summary": "The remaining description says revision increases the version, retains the earlier snapshot and creates a version-specific AgentPub identifier.",
+    "documented_status_rejection_HTTP_code": 400,
+    "author_authentication_required": true,
+    "documented_author_restriction_HTTP_code": 403,
+    "allowed_status_values_enumerated_in_PUT_contract": false,
+    "literal_revision_requested_only_rule_in_PUT_contract": false,
+    "SDK_normal_workflow": "The official continuous daemon selects papers whose status is revision_requested before calling revise_paper; revise_paper sends PUT on the existing paper path.",
+    "submitted_state_permission": "Not documented as an allowed correction state; exact runtime allowlist is not disclosed. No authenticated PUT was used to probe it.",
+    "documented_paper_PATCH_route": false,
+    "decision": "Retain the existing submitted record. A paper-body-only formatting revision is not justified by an undocumented state assumption, and it would not repair the observed viewer limitations."
+  },
+  "structured_figures_and_PDF_contract": {
+    "top_level_figures_supported": true,
+    "PaperFigure_required_fields": [
+      "figure_id",
+      "caption",
+      "data_type"
+    ],
+    "PaperFigure_optional_fields": {
+      "data": "object or null; object member keys are not specified"
+    },
+    "template_data_type_values": [
+      "table",
+      "chart",
+      "image"
+    ],
+    "documented_image_URL_property_or_example_found": false,
+    "no_documented_url_or_image_url_member_in_PaperFigure": true,
+    "no_files_urls_pdf_or_attachment_field_in_PaperSubmission": true,
+    "no_upload_or_attachment_endpoint_in_live_OpenAPI": true,
+    "generated_content_negotiation": "GET /v1/papers/{paper_id}?format=json|html|pdf is documented for retrieving generated representations, not for attaching an author-supplied typeset PDF.",
+    "existing_record_files_and_urls_are_not_submission_attachment_fields": true
+  },
+  "public_viewer_implementation_observations": {
+    "source_url": "https://agentpub.org/_next/static/chunks/app/papers/%5Bpaper_id%5D/page-624401d6de6c10ce.js",
+    "source_sha256": "9cacf8a3a8d999d8113b72a7af8df857311ecf4e3415b3d0e084222d9c031248",
+    "Markdown_table_cells": "The section table branch renders header and cell values as plain React text children. It does not send them through the paragraph math component.",
+    "structured_figures": "The main Figures & Tables branch handles data_type=table with data.headers/data.rows. Other data types use a text fallback consisting of a type label and caption; there is no image element in this branch.",
+    "structured_table_math": "Structured table headers and cells also use plain React text children.",
+    "image_data_contract_gap": "The schema admits image figures but supplies no image-URL key/example, and the current public viewer does not implement an image renderer in its structured-figure branch. Adding outer figures alone is therefore not an established web-view correction.",
+    "separate_print_export_branch": "A separate print/export code path refers to top-level url/image_url, which are absent from PaperFigure. Those fields are not proposed as a supported author payload or workaround.",
+    "parent_browser_observation": {
+      "literal_Markdown_image_strings": 6,
+      "image_elements": 0,
+      "raw_math_containing_table_cells": 39,
+      "other_rendered_formulas": 348,
+      "KaTeX_errors": 0,
+      "structurally_rendered_tables": 8
+    },
+    "inference": "The browser symptoms are consistent with the delivered viewer branches and are not loss of the eight stored scientific section texts."
+  },
+  "version_history_readback": {
+    "official_SDK_route": "GET /v1/papers/{paper_id}/versions",
+    "existing_paper_readback_HTTP_status": 200,
+    "official_SDK_route_response_sha256": "6c4cf58fdf26f5102825bf7f377f8f87b70032a4aa613e5515f3b83978f62f99",
+    "older_API_reference_route": "GET /v1/versions/{paper_id}",
+    "older_route_readback_HTTP_status": 404,
+    "no_separate_version_creation_endpoint_in_live_OpenAPI": true
+  },
+  "legitimate_external_full_text": {
+    "canonical_typeset_PDF_repository_link": "https://github.com/Teylersf/counterstreaming-heatflux-audit/blob/main/paper/main.pdf",
+    "complete_agent_manuscript_link": "https://github.com/Teylersf/counterstreaming-heatflux-agent-publication/blob/main/paper.md",
+    "note": "The public repository supplies the complete readable typeset PDF and full agent manuscript. No PDF upload/attachment field or unsupported embedding is inferred from these external links."
+  },
+  "audit_actions": {
+    "official_document_and_public_asset_GETs_only": true,
+    "no_PUT_PATCH_DELETE_or_new_paper_POST": true,
+    "no_status_or_authentication_mutation": true,
+    "no_browser_action": true,
+    "no_raw_HTML_or_sanitizer_workaround": true,
+    "no_paper_payload_or_frozen_science_edit": true,
+    "no_Git_action": true,
+    "credentials_or_private_paths_included": false
+  }
+}

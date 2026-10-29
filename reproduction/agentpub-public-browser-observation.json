@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "observed_at_utc": "2026-10-29T05:13:33Z",
+  "public_url": "https://agentpub.org/papers/paper_2026_84801b",
+  "public_paper_id": "paper_2026_84801b",
+  "method": "Read-only Chrome DOM inspection and one successful viewport screenshot; no publication or content mutation.",
+  "expected_payload_sha256": "bf1396a0fa707432fc1150a9cbd1c9dc3caa0e8132e81c93889eed5330a19257",
+  "visible_identity": {
+    "title": "Initial-state matching and pressure realizability in counter-streaming electron-fluid comparisons",
+    "status_badge": "Submitted",
+    "agent_byline": "Lattice Audit Agent",
+    "human_credit_text": "Human operator and canonical author: Taylor Kalin",
+    "title_agent_byline_and_human_credit_present": true
+  },
+  "section_arrangement": {
+    "implementation_parent_heading_present": true,
+    "relocated_subsection_heading": "3.1 Intervention and implementation",
+    "relocated_subsection_heading_occurrences": 1,
+    "platform_arrangement_note_present": true
+  },
+  "article_rendering": {
+    "katex_elements": 348,
+    "mathml_elements": 348,
+    "katex_error_elements": 0,
+    "table_elements": 8,
+    "table_cells_retaining_dollar_delimited_tex": 39,
+    "raw_table_math_examples": [
+      "$Y=15.95d_e$",
+      "Archived $\\overline v_z/c$",
+      "$\\langle J_z^{\\mathrm{mom}}\\rangle_x$",
+      "Minimum $\\lambda(P_s)$"
+    ],
+    "article_image_elements": 0,
+    "literal_image_markdown": [
+      "![Figure 1](https://raw.githubusercontent.com/Teylersf/counterstreaming-heatflux-audit/main/figures/initial-state.png?version=1.2.0&figure=1)",
+      "![Figure 2](https://raw.githubusercontent.com/Teylersf/counterstreaming-heatflux-audit/main/figures/profile-sensitivity.png?version=1.2.0&figure=2)",
+      "![Figure 3](https://raw.githubusercontent.com/Teylersf/counterstreaming-heatflux-audit/main/figures/numerical-endpoints-pressure-history.png?version=1.2.0&figure=3)",
+      "![Figure 4](https://raw.githubusercontent.com/Teylersf/counterstreaming-heatflux-audit/main/figures/numerical-endpoints-errors.png?version=1.2.0&figure=4)",
+      "![Figure 5](https://raw.githubusercontent.com/Teylersf/counterstreaming-heatflux-audit/main/figures/numerical-endpoints-profiles.png?version=1.2.0&figure=5)",
+      "![Figure 6](https://raw.githubusercontent.com/Teylersf/counterstreaming-heatflux-audit/main/figures/stability.png?version=1.2.0&figure=6)"
+    ],
+    "current_viewport_width_css_px": 2348,
+    "current_document_width_css_px": 2348,
+    "no_document_horizontal_overflow_at_observed_width": true
+  },
+  "platform_credit_note": {
+    "visible_generic_footer_text": "No human authored or verified the content.",
+    "qualification": "This platform-provided footer coexists with the article's explicit Taylor Kalin canonical-author/human-operator credit. The authorized agent edition remains identified as agent-authored."
+  },
+  "findings": [
+    "All six figure Markdown strings are visible literally and no article image elements are present.",
+    "Eight tables render structurally, but 39 table cells retain literal dollar-delimited TeX.",
+    "Other body mathematics renders with 348 KaTeX elements and no explicit KaTeX error elements at observation time.",
+    "The expected title, agent byline, human credit and single relocated implementation-methods subsection are present."
+  ],
+  "limits": [
+    "Counts describe the public HTML rendering, not a new scientific-content or mathematical-equivalence audit.",
+    "No edit, submission, reviewer interaction, raw HTML injection, sanitizer workaround, cookie, storage or session-key access was performed.",
+    "The canonical manuscript, PDF, AAES registration and core scientific evidence were not changed.",
+    "Only public article facts are recorded; browser authentication/session information and the full DOM are excluded."
+  ],
+  "action_taken": "Observation only; renderer defects reported to the parent agent for supported platform-route investigation."
+}

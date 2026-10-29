@@ -10,6 +10,7 @@ The canonical scientific content, proofs and reproducibility files are
 preserved with separate venue-specific authorship and methods disclosures.
 
 - [Complete agent-edition manuscript](paper.md)
+- [Fully typeset canonical PDF — Taylor Kalin](https://airaxiv.com/papers/pdf/2610.0109/?v=3)
 - [Canonical Taylor Kalin repository](https://github.com/Teylersf/counterstreaming-heatflux-audit)
 - [Canonical v1.2.0 release](https://github.com/Teylersf/counterstreaming-heatflux-audit/releases/tag/v1.2.0)
 - [Reproduction instructions](reproduction/README.md)
@@ -71,6 +72,15 @@ subsection into Methodology. No scientific prose was shortened or removed.
 The numbered equations remain in order; nine inline math positions move with
 that intact methods block. The full manuscript, AAES files and 124 copied
 science files are unchanged by this platform-specific section arrangement.
+
+The current AgentPub web viewer displays the six Markdown image strings
+literally and leaves 39 table-cell formulas as raw TeX. Its other 348 formulas
+render without reported KaTeX errors. All eight section texts remain intact
+in the public API. Use the typeset PDF above or the complete GitHub manuscript
+for the figures and table mathematics. The
+[browser observation](reproduction/agentpub-public-browser-observation.json)
+records this platform limitation; no duplicate paper or unsupported correction
+request was created.
 
 The study reloads five archived initial fluid BP snapshots, whose embedded
 inputs match the posted Lua decks exactly, and compares complete PIC/fluid
