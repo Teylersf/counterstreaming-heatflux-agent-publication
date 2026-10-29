@@ -1,41 +1,49 @@
 {
-  "checked_at_utc": "2026-10-29T04:41:41.035252+00:00",
+  "checked_at_utc": "2026-10-29T04:50:01.617364+00:00",
   "repository": "https://github.com/Teylersf/counterstreaming-heatflux-agent-publication",
   "canonical_work_version": "1.2.0",
   "scientific_code_pin": "b47a51608726b80931fc607f0f44a02ab4bfbfdd",
-  "verified_public_preprint_commit": "dc6f7e180836be6c2fdae9eefb7ca32f28a00a50",
+  "verified_public_preprint_commit": "006c0e64ec41eceb0c2a1ee5aec84b4a8020bfc7",
   "files": [
     {
       "path": "paper.md",
-      "url": "https://raw.githubusercontent.com/Teylersf/counterstreaming-heatflux-agent-publication/main/paper.md",
-      "bytes": 87831,
-      "sha256": "a053a48c609e36220c980b9d0b29a64047dceb887a2955fb19a7bcc6e85aeff9",
-      "matches_local": true
-    },
-    {
-      "path": "metadata.json",
-      "url": "https://raw.githubusercontent.com/Teylersf/counterstreaming-heatflux-agent-publication/main/metadata.json",
-      "bytes": 4453,
-      "sha256": "27ae6db74c542f8b2763bd822000265e97edd68ff0ca1eff1d4ef9c13be4f7f7",
+      "url": "https://raw.githubusercontent.com/Teylersf/counterstreaming-heatflux-agent-publication/006c0e64ec41eceb0c2a1ee5aec84b4a8020bfc7/paper.md",
+      "bytes": 87886,
+      "sha256": "fb6acb3d36714be2bbfdf91baec403a8ef8b2764c80a9c3baeaac1581379831f",
       "matches_local": true
     },
     {
       "path": "agentpub-payload.json",
-      "url": "https://raw.githubusercontent.com/Teylersf/counterstreaming-heatflux-agent-publication/main/agentpub-payload.json",
-      "bytes": 93472,
-      "sha256": "12dcbb88d36c0f5cfa5c3494df7cd83b4d197d0ff3db3783032ac84766b33dc5",
+      "url": "https://raw.githubusercontent.com/Teylersf/counterstreaming-heatflux-agent-publication/006c0e64ec41eceb0c2a1ee5aec84b4a8020bfc7/agentpub-payload.json",
+      "bytes": 93524,
+      "sha256": "b8e903f1ee39aed2b19be335b51045e5aea046176ee9fe8321ee1cded0f15c7c",
       "matches_local": true
     },
     {
-      "path": "results/gkeyll-admissibility.json",
-      "url": "https://raw.githubusercontent.com/Teylersf/counterstreaming-heatflux-agent-publication/main/results/gkeyll-admissibility.json",
-      "bytes": 139260,
-      "sha256": "8e53a5c39a3ac5429b5f2240d7d15a95eec7028d0f7af847ae91850659170a7c",
+      "path": "aaes-registration.json",
+      "url": "https://raw.githubusercontent.com/Teylersf/counterstreaming-heatflux-agent-publication/006c0e64ec41eceb0c2a1ee5aec84b4a8020bfc7/aaes-registration.json",
+      "bytes": 4987,
+      "sha256": "544b10d02676eede97daf052daa239a98e029a8d37cf542523b244eda8668c42",
+      "matches_local": true
+    },
+    {
+      "path": "reproduction/publication-context.json",
+      "url": "https://raw.githubusercontent.com/Teylersf/counterstreaming-heatflux-agent-publication/006c0e64ec41eceb0c2a1ee5aec84b4a8020bfc7/reproduction/publication-context.json",
+      "bytes": 689,
+      "sha256": "9b9aff3290810b52bdbcf9e6e08346f0c18154aee9cd40939d992460b00d4e66",
+      "matches_local": true
+    },
+    {
+      "path": "reproduction/publishfun-release-verification.json",
+      "url": "https://raw.githubusercontent.com/Teylersf/counterstreaming-heatflux-agent-publication/006c0e64ec41eceb0c2a1ee5aec84b4a8020bfc7/reproduction/publishfun-release-verification.json",
+      "bytes": 887,
+      "sha256": "9ea3cefe43616ef7aab917a13e5f98862c2b1696f7c7aedbbd2867197cd55861",
       "matches_local": true
     }
   ],
   "all_checked_files_match_local": true,
-  "agent_venue_review_started": false,
-  "publishfun_review_closed_verified": false,
-  "scope": "Anonymous public preprint byte verification. Does not establish an AgentPub submission or AAES registration."
+  "publishfun_publication_verified": true,
+  "publishfun_public_id": "PF-261029.000001",
+  "agent_venue_review_started_at_this_check": false,
+  "scope": "Anonymous immutable-commit public-byte verification before ordinary venue submissions; no paper ID is inferred."
 }

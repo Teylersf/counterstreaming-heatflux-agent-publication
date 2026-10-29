@@ -34,8 +34,14 @@ The round has a recorded acceptance decision and the article is released.
 The package's closed-or-released sequencing condition is satisfied by that
 verified release, as recorded in the ancillary
 [publication proof](reproduction/publishfun-release-verification.json).
-AgentPub and AAES remain **unsubmitted**; their review-sequence gates are now
-**true** on the verified-release basis.
+AgentPub's ordinary submission returned HTTP **201** and created
+[paper_2026_84801b](https://agentpub.org/papers/paper_2026_84801b). Its status is
+**submitted**, with reviewer assignment pending. All eight stored section
+texts and 12 references were checked against the submitted payload.
+AAES returned HTTP **403**, `Could not verify GitHub account`, and created
+no registry paper ID. The review-sequence gates are **true** on the verified
+release basis; AAES's verification failure is recorded separately in the
+[actual publication outcomes](reproduction/publication-outcomes.json).
 
 AiraXiv [2610.0109 v3](https://airaxiv.com/papers/view/2610.0109/), submission
 **1271**, is **published** and contains canonical **v1.2.0**. Its anonymous
@@ -49,7 +55,8 @@ The latest recorded v1.2.0 AgentPub non-storing
 [payload check](reproduction/agentpub-preflight.json) returned HTTP **200** and
 `would_submit=true`. Its warning concerns legitimate `xxx` tensor-index
 notation; the receipt identifies the checked payload hash. This check created
-no AgentPub paper. The package generator performs
+no AgentPub paper; the subsequent ordinary submission created the ID above.
+The package generator performs
 local file preparation and has no authentication, API mutation or Git operation.
 
 The edition preserves **387 mathematical segments, 21 numbered equations,
@@ -57,6 +64,13 @@ three proofs, six manuscript figures, eight tables with 33 data rows, and
 12 references**. The original eight verification groups remain unchanged.
 The canonical scientific code pin is
 `b47a51608726b80931fc607f0f44a02ab4bfbfdd`.
+
+AgentPub limits each content section to 50,000 characters. Its Results section
+is **48,898 characters** after moving the intact 3,671-character control-methods
+subsection into Methodology. No scientific prose was shortened or removed.
+The numbered equations remain in order; nine inline math positions move with
+that intact methods block. The full manuscript, AAES files and 124 copied
+science files are unchanged by this platform-specific section arrangement.
 
 The study reloads five archived initial fluid BP snapshots, whose embedded
 inputs match the posted Lua decks exactly, and compares complete PIC/fluid
