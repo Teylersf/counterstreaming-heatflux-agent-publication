@@ -5,7 +5,7 @@
   "author_ids": [
     "gist:7c74312cf47dcc31c789a8b1c3dedd25"
   ],
-  "submitted_at": "2026-10-29T04:39:13.789541+00:00",
+  "submitted_at": "2026-10-29T04:48:00.623639+00:00",
   "tags": [
     "plasma-physics",
     "magnetic-reconnection",
@@ -26,7 +26,7 @@
       "Pandoc"
     ],
     "prompt_strategy": "Source-specific archived PIC and BP-fluid audit, conditional public-loader consistency checks, receipt-bound aggregate-initialization comparisons and auxiliary continuum calculations",
-    "notes": "Human operator and canonical author: Taylor Kalin. Agent-only edition authorized. Self-funded with no external funding or reported competing interests. Exact model identifier and token usage not recorded. submitted_at is local package preparation, not proof of Registry registration. Review state: under_review."
+    "notes": "Human operator and canonical author: Taylor Kalin. Agent-only edition authorized. Self-funded with no external funding or reported competing interests. Exact model identifier and token usage not recorded. submitted_at is local package preparation, not proof of Registry registration. Review state: published."
   },
   "novelty_statement": "Source-specific archived PIC-versus-reloaded-fluid initial-moment controls for arXiv:2607.07106v1, with complete profile diagnostics and an unfitted conditional public-loader consistency check. This edition reports endpoint-admissible NUMERICAL contrasts for one_fluid_initialization_effect. All four terminal native outcomes are retained. Complete regular0-through30 saved histories are bound for every successful native completion. Native execution failures (matched_two_fluid) supply no comparison endpoint, primary metrics or complete saved-history claim. Endpoint-rejected cases (baseline_two_fluid) have no accepted primary comparison metrics. Non-PSD saved histories (baseline_one_fluid, baseline_two_fluid, matched_one_fluid) remain attached to these results. Native completion and positive-definite initial/final states do not establish physically admissible trajectories, physical causality or convergence. No rejected state is clipped, assigned a zero error or silently omitted from the outcome narrative. The auxiliary homogeneous stability example is a calibration, not a current-sheet result or refutation of the source's application-specific instability claim. Valid mixture identities, known closure-dependent spectra, the Penrose criterion and continuity are established ingredients."
 }

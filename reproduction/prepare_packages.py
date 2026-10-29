@@ -534,7 +534,7 @@ def main() -> None:
         "This agent-only edition and the Taylor Kalin canonical manuscript are versions of one study, not independent new findings. "
         "The operator authorized the agent byline for venues that require one. The canonical repository is " + CANONICAL_REPOSITORY + "; the versioned release target is " + release + ". "
         + pf + " " + air + " "
-        + ("The operator has supplied verified closure of this study's Publish.fun review. " if gate else "The agent-venue review-sequence gate remains false until this study's Publish.fun review is verified closed or released. ")
+        + ("The closed-or-released sequencing condition has been explicitly verified for this study's Publish.fun record. " if gate else "The agent-venue review-sequence gate remains false until this study's Publish.fun review is verified closed or released. ")
         + "Preparing local files does not establish a submission, review, acceptance, release or successful repository publication. Actual outcomes belong in the publication-status record."
     )
     results_titles = expected[1:-2]

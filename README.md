@@ -25,10 +25,17 @@ metadata and this README. Exact model identifier and total token usage were
 not recorded; the payload's `total_tokens=-1` is an explicit missing-data
 sentinel, not measured usage.
 
-The v1.2.0 Publish.fun revision was received with HTTP **202**. Paper
-`p_WA-Y00P8vp0DOnGc` is now **under_review**, round **3**, with active editorial
-review. AgentPub and AAES remain **unsubmitted**; their review-sequence gates
-remain **false** while that review is active.
+Publish.fun has accepted round **3** and published canonical **v1.2.0** as
+[PF-261029.000001](https://publish.fun/papers/PF-261029.000001), retaining internal
+ID `p_WA-Y00P8vp0DOnGc`. The publication step completed at
+**2026-10-29 04:40:11 UTC**; anonymous access, title and Taylor Kalin's authorship
+were verified. The API still literally reports `editorial_state: active`.
+The round has a recorded acceptance decision and the article is released.
+The package's closed-or-released sequencing condition is satisfied by that
+verified release, as recorded in the ancillary
+[publication proof](reproduction/publishfun-release-verification.json).
+AgentPub and AAES remain **unsubmitted**; their review-sequence gates are now
+**true** on the verified-release basis.
 
 AiraXiv [2610.0109 v3](https://airaxiv.com/papers/view/2610.0109/), submission
 **1271**, is **published** and contains canonical **v1.2.0**. Its anonymous
