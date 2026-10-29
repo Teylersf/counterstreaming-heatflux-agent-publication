@@ -5,9 +5,9 @@
     "maturity": "final"
   },
   "project": {
-    "title": "Initial-state matching and stability diagnostics for a counter-streaming electron-fluid closure",
-    "summary": "Archived PIC and reloaded fluid initial-state controls with conditional loader calculations and an auxiliary continuum calibration for arXiv:2607.07106v1.",
-    "research_question": "How do the archived initial physical moments differ, what does a conditional public loading rule explain, and which causal or sheet-stability conclusions remain untested?",
+    "title": "Initial-state matching and pressure realizability in counter-streaming electron-fluid comparisons",
+    "summary": "Archived PIC/fluid initial-state audit, conditional loader consistency checks, receipt-bound aggregate-matching comparisons and an auxiliary continuum calibration for arXiv:2607.07106v1.",
+    "research_question": "How do the archived physical moments differ, how sensitive are the tested fluid results to aggregate-moment matching, and which implementation, label, time and third-moment limitations remain?",
     "status": "active"
   },
   "claims": [
@@ -15,14 +15,14 @@
       "text": "The archived initial PIC and fluid velocity moments differ: the full x-averaged moment-current profile has a relative L2 difference of 9.87 percent, and the two lower-sheet central cells differ by about 11.6 percent. Reloaded fluid output corroborates the posted initializers to roundoff.",
       "kind": "finding",
       "status": "proposed",
-      "evidence_summary": "Five CRC32/SHA-256 checked t=0 BP snapshots, embedded inputs byte-identical to the posted Lua decks, all 480x640 fluid cells checked, and full 640-row PIC/fluid profile comparisons.",
-      "confidence_note": "Physical moment current and velocity-covariance pressure; no native deposited-current file is identifiable. Whole-archive MD5, a matched-state rerun and nonlinear causal significance remain unestablished."
+      "evidence_summary": "Five CRC32/SHA-256 checked t=0 BP snapshots, embedded inputs byte-identical to the posted Lua decks, all 480x640 fluid cells checked, and full 640-row PIC/fluid profile comparisons; full source ZIP byte counts/MD5/SHA-256 verified separately.",
+      "confidence_note": "Physical moment current and velocity-covariance pressure; no native deposited-current file is identifiable. Initial mismatch percentages alone do not give a nonlinear effect or reconnection-rate bound."
     },
     {
-      "text": "The inspected public unweighted thermal-momentum loading rule predicts a mean drift below its cold proper-velocity conversion. An unfitted quadratic-shape sensitivity further accounts for the scale of the archived lower-sheet drift reduction.",
+      "text": "The inspected public unweighted thermal-momentum loading rule predicts a mean drift below its cold proper-velocity conversion. An unfitted quadratic-shape model provides a conditional consistency check against selected archived lower-sheet moments.",
       "kind": "finding",
       "status": "proposed",
-      "evidence_summary": "Complete posted PIC deck audit, pinned public loader/deposition source, converged Gaussian quadrature and independent Cartesian moment checks; conditional pointwise and shape predictions remain separate.",
+      "evidence_summary": "Complete posted PIC deck audit, pinned public loader/deposition source, converged Gaussian quadrature and independent Cartesian moment checks; conditional pointwise and shape calculations remain separate.",
       "confidence_note": "Conditional on the public loading rule and stated sampling assumptions; the original executable and custom velocity-diagnostic kernel are not identified or certified."
     },
     {
@@ -31,6 +31,13 @@
       "status": "proposed",
       "evidence_summary": "Explicit rational Penrose bound, linear system, eigenvalue residual, dielectric residual and Gauss-constraint checks.",
       "confidence_note": "Separate nonrelativistic continuum benchmark; no claim that this mode occurred in the source reconnection simulation or of general electromagnetic stability."
+    },
+    {
+      "text": "This edition reports endpoint-admissible NUMERICAL contrasts for one_fluid_initialization_effect. All four terminal native outcomes are retained. Complete regular0-through30 saved histories are bound for every successful native completion. Native execution failures (matched_two_fluid) supply no comparison endpoint, primary metrics or complete saved-history claim. Endpoint-rejected cases (baseline_two_fluid) have no accepted primary comparison metrics. Non-PSD saved histories (baseline_one_fluid, baseline_two_fluid, matched_one_fluid) remain attached to these results. Native completion and positive-definite initial/final states do not establish physically admissible trajectories, physical causality or convergence. No rejected state is clipped, assigned a zero error or silently omitted from the outcome narrative.",
+      "kind": "finding",
+      "status": "proposed",
+      "evidence_summary": "Accepted numerical regular-frame30 comparisons only: [{\"id\": \"baseline_one_fluid\", \"actual_time\": 300.0001500000136, \"full_grid_relative_L2\": {\"rho\": 0.03976323378034248, \"Jz\": 0.2830462225811292, \"Pxx\": 0.3628716934320739, \"Pzz\": 0.34655728561082005}}, {\"id\": \"matched_one_fluid\", \"actual_time\": 300.0001500000136, \"full_grid_relative_L2\": {\"rho\": 0.03477363523464411, \"Jz\": 0.2651229537716963, \"Pxx\": 0.28854734388418907, \"Pzz\": 0.30771767476876094}}]",
+      "confidence_note": "One grid and one sampled aggregate target; actual times are retained. All four native outcomes, rejected endpoint decisions and saved-history failures remain explicit; no rejected endpoint has a primary metric. Endpoint PD does not validate the saved or continuous physical trajectory. Smooth fluid labels are retained, not PIC tags. Tagged qCS is only a population-recentering contribution; central-qxxx comparisons require an unverified raw-third normalization. Only eligible endpoint pairs and eligible clean-versus-archived differences are compared."
     }
   ]
 }

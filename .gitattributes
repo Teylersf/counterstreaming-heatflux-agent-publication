@@ -2,5 +2,6 @@
 *.pdf binary
 *.png binary
 *.h5 binary
+*.json -text
 data/input-decks/* -text
 source-excerpts/*.txt -text
